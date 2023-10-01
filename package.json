@@ -1,0 +1,25 @@
+{
+  "name": "s360-scss-toolkit",
+  "version": "6.0.2",
+  "description": "Set of custom scss mixins, placeholders, and functions for building websites.",
+  "license": "MIT",
+  "author": "Square360, Inc.",
+  "contributors": [
+    {
+      "name": "Steven Keiser",
+      "email": "steven.keiser@square360.com"
+    },
+    {
+      "name": "Brian Milea",
+      "email": "brian.milea@square360.com"
+    },
+    {
+      "name": "Douglas McGilvray",
+      "email": "douglas.mcgilvray@square360.com"
+    },
+    {
+      "name": "George Heimel",
+      "email": "george.heimel@square360.com"
+    }
+  ]
+}

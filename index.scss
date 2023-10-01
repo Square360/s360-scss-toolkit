@@ -1,0 +1,24 @@
+@use "sass:map";
+
+$_DEFAULT-CONFIG: (
+  font-size-base: 16,
+  modular-scale-ratio: 1.168
+);
+
+// Potential overrrides from theme.
+$config: () !default;
+
+// All config.
+$config: map.deep-merge($_DEFAULT-CONFIG, $config);
+
+@forward "./effects";
+@forward "./helpers" with (
+  $helpers-font-size-base: map.get($config, 'font-size-base')
+);
+@forward "./scale" with (
+  $scale-font-size-base: map.get($config, 'font-size-base'),
+  $scale-modular-scale-ratio: map.get($config, 'modular-scale-ratio')
+);
+@forward "./semantics";
+@forward "./typography";
+@forward "./visibility";
