@@ -1,0 +1,90 @@
+@use "sass:math";
+@use "../helpers/rem" as *;
+@use "../helpers/em" as *;
+@use "../helpers/strip-unit" as *;
+
+$linear-scale-font-size-base: 16 !default;
+
+/// Returns responsive font sizing using clamp() and linear scaling based on container query width 'cqw'
+/// and font min and max sizes.
+///
+/// Based on earler linear-scale work in this toolkit.
+///
+///
+/// @author George Heimel
+/// @author Steven Keiser
+///
+/// @param {number} $min-size
+///   Minimum size in px.
+/// @param {number} $max-size
+///   Maximum size in px.
+/// @param {number} $min-container [300]
+///   Minimum container size in px.
+/// @param {number} $max-container [1240]
+///   Maximum container size in px.
+/// @param {number} $rem-base [16]
+///   Assume a base of 16 for REM, pass in if not true
+///
+/// @require {function} strip-unit
+///
+/// @example
+///   .selector {
+///     font-size: linear-scale-cq(24, 62, 340, 1440, 18);
+///   }
+///
+/// @return {string}
+///   return will always be in REMs and cwq units
+///
+
+@function linear-scale-cq($min-size, $max-size, $min-container: 360, $max-container: 1240, $rem-base: 16) {
+  @if type-of($min-size) != 'number' {
+    @error 'The argument $min-size: `#{ $min-size }` is not a number.';
+  }
+  @if not unitless($min-size) {
+    $min-size: strip-unit($min-size);
+  }
+
+  @if type-of($max-size) != 'number' {
+    @error 'The argument $max-size: `#{ $max-size }` is not a number.';
+  }
+  @if not unitless($max-size) {
+    $max-size: strip-unit($max-size);
+  }
+
+  @if type-of($min-container) != 'number' {
+    @error 'The argument $min-container: `#{ $min-container }` is not a number.';
+  }
+  @if not unitless($min-container) {
+    $min-container: #{ strip-unit($min-container) };
+  }
+
+  @if type-of($max-container) != 'number' {
+    @error 'The argument $max-container: `#{ $max-container }` is not a number.';
+  }
+  @if not unitless($max-container) {
+    $max-container:  #{ strip-unit($max-container)};
+  }
+
+
+  $slope: math.div(($max-size - $min-size), ($max-container - $min-container));
+  $y-axis-intersection: (-$min-container) * $slope + $min-size;
+
+  @if $y-axis-intersection == 0 {
+    $y-axis-intersection: 0.0000000001;
+  }
+
+  // Convert values based on the $unit.
+  @if not unitless($rem-base) {
+    $rem-base: #{ strip-unit($rem-base) };
+  }
+  $rem-font-size-base: #{ $rem-base };
+  $min-size: #{ rem($min-size) };
+  $max-size: #{ rem($max-size) };
+  $y-axis-intersection: #{ rem($y-axis-intersection) };
+
+  @return clamp(
+    #{ $min-size },
+    calc(#{ $y-axis-intersection } + #{ $slope * 100 }cqw),
+    #{ $max-size }
+  );
+}
