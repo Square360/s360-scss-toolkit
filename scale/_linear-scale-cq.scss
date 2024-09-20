@@ -3,8 +3,6 @@
 @use "../helpers/em" as *;
 @use "../helpers/strip-unit" as *;
 
-$linear-scale-font-size-base: 16 !default;
-
 /// Returns responsive font sizing using clamp() and linear scaling based on container query width 'cqw'
 /// and font min and max sizes.
 ///
@@ -77,7 +75,7 @@ $linear-scale-font-size-base: 16 !default;
   @if not unitless($rem-base) {
     $rem-base: #{ strip-unit($rem-base) };
   }
-  $rem-font-size-base: #{ $rem-base };
+
   $min-size: #{ rem($min-size) };
   $max-size: #{ rem($max-size) };
   $y-axis-intersection: #{ rem($y-axis-intersection) };
