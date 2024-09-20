@@ -9,3 +9,7 @@ $scale-modular-scale-ratio: 1.618 !default;
   $modular-scale-font-size-base: $scale-font-size-base,
   $modular-scale-ratio: $scale-modular-scale-ratio
 );
+
+@forward "./linear-scale-cq" with (
+  $linear-scale-rem-base: $scale-font-size-base
+);
