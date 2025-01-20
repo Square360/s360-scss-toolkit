@@ -1,3 +1,4 @@
+@use "sass:meta";
 @use "../scale/modular-scale" as *;
 @use "../helpers/rem" as *;
 
@@ -25,7 +26,7 @@
 /// @access public
 
 @function font-size-ms($scale, $namespace: '') {
-  @if type-of($scale) != 'number' {
+  @if meta.type-of($scale) != 'number' {
     @error "The argument $scale: `#{ $scale }` is not a number.";
   }
 
@@ -54,7 +55,7 @@
 /// @require {function} rem
 
 @mixin font-size-ms($scale, $namespace: '') {
-  @if type-of($scale) != 'number' {
+  @if meta.type-of($scale) != 'number' {
     @error "The argument $scale: `#{ $scale }` is not a number.";
   }
 

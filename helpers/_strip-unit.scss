@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:meta";
 
 /// Removes the unit from $number.
 ///
@@ -16,7 +17,7 @@
 /// @access public
 
 @function strip-unit($number) {
-  @if type-of($number) != 'number' {
+  @if meta.type-of($number) != 'number' {
     @error 'The argument $number: `#{ $number }` is not a number.';
   }
 

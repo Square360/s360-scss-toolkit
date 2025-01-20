@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
 
 @use "./strip-unit" as *;
 
@@ -40,7 +41,7 @@
     'cqh': 1cqh,
   );
 
-  @if type-of($number) != 'number' {
+  @if meta.type-of($number) != 'number' {
     @error 'The argument $number: `#{ $number }` is not a number.';
   }
 

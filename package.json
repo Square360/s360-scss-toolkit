@@ -1,6 +1,6 @@
 {
   "name": "s360-scss-toolkit",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Set of custom scss mixins, placeholders, and functions for building websites.",
   "license": "MIT",
   "author": "Square360, Inc.",
