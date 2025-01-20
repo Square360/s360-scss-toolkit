@@ -1,3 +1,5 @@
+@use "sass:math";
+@use "sass:meta";
 @use "../helpers/rem" as *;
 
 /// Returns responsive font sizing using clamp() with fallback.
@@ -16,27 +18,27 @@
   $med-size,
   $max-size
 ) {
-  @if type-of($min-size) != 'number' {
+  @if meta.type-of($min-size) != 'number' {
     @error 'The argument $min-size: `#{ $min-size }` is not a number.';
   }
 
-  @if not unitless($min-size) {
+  @if not math.is-unitless($min-size) {
     @error "The argument $min-size: `#{ $min-size }` is not unitless.";
   }
 
-  @if type-of($med-size) != 'number' {
+  @if meta.type-of($med-size) != 'number' {
     @error 'The argument $med: `#{ $med-size }` is not a number.';
   }
 
-  @if not unitless($med-size) {
+  @if not math.is-unitless($med-size) {
     @error "The argument $med-size: `#{ $med-size }` is not unitless.";
   }
 
-  @if type-of($max-size) != 'number' {
+  @if meta.type-of($max-size) != 'number' {
     @error 'The argument $max-size: `#{ $max-size }` is not a number.';
   }
 
-  @if not unitless($max-size) {
+  @if not math.is-unitless($max-size) {
     @error "The argument $max-size: `#{ $max-size }` is not unitless.";
   }
 

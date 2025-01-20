@@ -1,6 +1,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:math";
+@use "sass:meta";
 @use "sass:string";
 
 @use "./to-unit" as *;
@@ -18,11 +19,11 @@
 ///   The $value as a number.
 
 @function to-number($value) {
-  @if type-of($value) == 'number' {
+  @if meta.type-of($value) == 'number' {
     @return $value;
   }
 
-  @if type-of($value) != 'string' {
+  @if meta.type-of($value) != 'string' {
     @error 'The argument $value: `#{ $value }` is not a string.';
   }
 
