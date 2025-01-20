@@ -12,6 +12,8 @@
 ///
 /// @return {number}
 ///   The given $number with it's unit removed.
+///
+/// @access public
 
 @function strip-unit($number) {
   @if type-of($number) != 'number' {

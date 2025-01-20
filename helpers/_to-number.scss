@@ -16,6 +16,8 @@
 ///
 /// @return {number}
 ///   The $value as a number.
+///
+/// @access public
 
 @function to-number($value) {
   @if type-of($value) == 'number' {

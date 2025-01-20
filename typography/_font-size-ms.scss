@@ -7,6 +7,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @group typography
+///
 /// @param {number} $scale
 ///   The point in the modular-scale sequence.
 ///   Postive numbers, larger font size.
@@ -19,6 +21,8 @@
 ///
 /// @return {string}
 ///   A css3 variable with a default font-size.
+///
+/// @access public
 
 @function font-size-ms($scale, $namespace: '') {
   @if type-of($scale) != 'number' {

@@ -15,6 +15,8 @@
 ///
 /// @return {number}
 ///   The $number displayed with the $unit.
+///
+/// @access public
 
 @function to-unit($number, $unit) {
   $units: (
@@ -33,7 +35,9 @@
     'vh': 1vh,
     'vmin': 1vmin,
     'vmax': 1vmax,
-    'fr': 1fr
+    'fr': 1fr,
+    'cqw': 1cqw,
+    'cqh': 1cqh,
   );
 
   @if type-of($number) != 'number' {
