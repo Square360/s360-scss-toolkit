@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:meta";
 @use "../helpers/strip-unit" as *;
 @use "../helpers/to-number" as *;
 
@@ -33,19 +34,19 @@ $em-font-size-base: 16 !default;
     @error "The argument $font-size-base: `#{ $font-size-base }` must be greater than 0.";
   }
 
-  @if type-of($number) != 'number' {
+  @if meta.type-of($number) != 'number' {
     @error "The argument $number: `#{ $number }` is not a number.";
   }
 
-  @if type-of($font-size-base) != 'number' {
+  @if meta.type-of($font-size-base) != 'number' {
     @error "The argument $font-size-base: `#{ $font-size-base }` is not a number.";
   }
 
-  @if not unitless($number) {
+  @if not math.is-unitless($number) {
     $number: strip-unit($number);
   }
 
-  @if not unitless($font-size-base) {
+  @if not math.is-unitless($font-size-base) {
     $font-size-base: strip-unit($font-size-base);
   }
 

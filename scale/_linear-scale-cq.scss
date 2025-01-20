@@ -1,4 +1,5 @@
 @use "sass:math";
+@use "sass:meta";
 @use "../helpers/rem" as *;
 @use "../helpers/em" as *;
 @use "../helpers/strip-unit" as *;
@@ -35,32 +36,32 @@
 ///
 
 @function linear-scale-cq($min-size, $max-size, $min-container: 360, $max-container: 1240, $rem-base: 16) {
-  @if type-of($min-size) != 'number' {
+  @if meta.type-of($min-size) != 'number' {
     @error 'The argument $min-size: `#{ $min-size }` is not a number.';
   }
-  @if not unitless($min-size) {
+  @if not math.is-unitless($min-size) {
     $min-size: strip-unit($min-size);
   }
 
-  @if type-of($max-size) != 'number' {
+  @if meta.type-of($max-size) != 'number' {
     @error 'The argument $max-size: `#{ $max-size }` is not a number.';
   }
-  @if not unitless($max-size) {
+  @if not math.is-unitless($max-size) {
     $max-size: strip-unit($max-size);
   }
 
-  @if type-of($min-container) != 'number' {
+  @if meta.type-of($min-container) != 'number' {
     @error 'The argument $min-container: `#{ $min-container }` is not a number.';
   }
-  @if not unitless($min-container) {
+  @if not math.is-unitless($min-container) {
     $min-container: #{ strip-unit($min-container) };
   }
 
   @if type-of($max-container) != 'number' {
     @error 'The argument $max-container: `#{ $max-container }` is not a number.';
   }
-  @if not unitless($max-container) {
-    $max-container:  #{ strip-unit($max-container)};
+  @if not math.is-unitless($max-container) {
+    $max-container: #{ strip-unit($max-container)};
   }
 
 
@@ -72,7 +73,7 @@
   }
 
   // Convert values based on the $unit.
-  @if not unitless($rem-base) {
+  @if not math.is-unitless($rem-base) {
     $rem-base: #{ strip-unit($rem-base) };
   }
 

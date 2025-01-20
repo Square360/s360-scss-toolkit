@@ -1,4 +1,5 @@
 @use "sass:list";
+@use "sass:meta";
 @use "sass:string";
 
 /// Split the $string by the $separator.
@@ -17,11 +18,11 @@
 ///  A list of strings created by splitting the $string by the $separator.
 
 @function str-split($string, $separator) {
-  @if type-of($string) != 'string' {
+  @if meta.type-of($string) != 'string' {
     @error 'The argument $string: `#{ $string }` is not a string.';
   }
 
-  @if type-of($separator) != 'string' {
+  @if meta.type-of($separator) != 'string' {
     @error 'The argument $separator: `#{ $separator }` is not a string.';
   }
 

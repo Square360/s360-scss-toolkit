@@ -1,4 +1,5 @@
 @use "sass:string";
+@use "sass:meta";
 
 /// Replace all occurrences of the $search string with the $replace string.
 ///
@@ -15,15 +16,15 @@
 ///   A string with the replaced values.
 
 @function str-replace($subject, $search, $replace) {
-  @if type-of($subject) != 'string' {
+  @if meta.type-of($subject) != 'string' {
     @error "The argument $subject: `#{ $subject }` is not a string.";
   }
 
-  @if type-of($search) != 'string' {
+  @if meta.type-of($search) != 'string' {
     @error "The argument $search: `#{ $search }` is not a string.";
   }
 
-  @if type-of($replace) != 'string' {
+  @if meta.type-of($replace) != 'string' {
     @error "The argument $replace: `#{ $replace }` is not a string.";
   }
 
