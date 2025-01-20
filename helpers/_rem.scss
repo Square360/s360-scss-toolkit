@@ -21,6 +21,8 @@ $rem-font-size-base: 16 !default;
 ///
 /// @return {number}
 ///   The given $number converted to "rem" units.
+///
+/// @access public
 
 @function rem($number, $font-size-base: $rem-font-size-base) {
   @if $number == 0 {
@@ -39,11 +41,11 @@ $rem-font-size-base: 16 !default;
     @error "The argument $font-size-base: `#{ $font-size-base }` is not a number.";
   }
 
-  @if not unitless($number) {
+  @if not math.is-unitless($number) {
     $number: strip-unit($number);
   }
 
-  @if not unitless($font-size-base) {
+  @if not math.is-unitless($font-size-base) {
     $font-size-base: strip-unit($font-size-base);
   }
 

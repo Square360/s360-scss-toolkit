@@ -6,8 +6,6 @@
 /// Helper function which defines a map of shadow styles that create the
 /// illusion of depth at each level.
 ///
-/// @access private
-///
 /// @author Brian Milea
 /// @author Steven Keiser
 ///
@@ -18,6 +16,8 @@
 ///
 /// @return {list}
 ///   The shadow definition for the chosen $level.
+///
+/// @access private
 
 @function _shadow($level, $color) {
   $shadow-levels: (
@@ -42,8 +42,6 @@
 
 /// Applies a box-shadow with the given parameters.
 ///
-/// @access public
-///
 /// @author Steven Keiser
 ///
 /// @param {number} $level [1]
@@ -52,6 +50,8 @@
 ///   The color of the shadow.
 ///
 /// @require {function} _shadow
+///
+/// @access public
 
 @mixin box-shadow(
   $level: 1,
@@ -62,8 +62,6 @@
 
 /// Adds drop-shadow filter(s) with the given parameters.
 ///
-/// @access public
-///
 /// @author Steven Keiser
 ///
 /// @param {number} $level [1]
@@ -72,6 +70,8 @@
 ///   The color of the shadow.
 ///
 /// @require {function} _shadow
+///
+/// @access public
 
 @function drop-shadow(
   $level: 1,

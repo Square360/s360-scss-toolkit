@@ -8,7 +8,6 @@
 ///
 /// Based on earler linear-scale work in this toolkit.
 ///
-///
 /// @author George Heimel
 /// @author Steven Keiser
 ///
@@ -32,9 +31,8 @@
 ///
 /// @return {string}
 ///   return will always be in REMs and cwq units
-///
 
-@function linear-scale-cq($min-size, $max-size, $min-container: 360, $max-container: 1240, $rem-base: 16) {
+@function linear-scale-cq($min-size, $max-size, $min-container: 360, $max-container: 1240) {
   @if type-of($min-size) != 'number' {
     @error 'The argument $min-size: `#{ $min-size }` is not a number.';
   }
@@ -60,7 +58,7 @@
     @error 'The argument $max-container: `#{ $max-container }` is not a number.';
   }
   @if not unitless($max-container) {
-    $max-container:  #{ strip-unit($max-container)};
+    $max-container: #{ strip-unit($max-container)};
   }
 
 
@@ -69,11 +67,6 @@
 
   @if $y-axis-intersection == 0 {
     $y-axis-intersection: 0.0000000001;
-  }
-
-  // Convert values based on the $unit.
-  @if not unitless($rem-base) {
-    $rem-base: #{ strip-unit($rem-base) };
   }
 
   $min-size: #{ rem($min-size) };

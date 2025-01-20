@@ -37,6 +37,7 @@ $linear-scale-font-size-base: 16 !default;
   @if type-of($min-size) != 'number' {
     @error 'The argument $min-size: `#{ $min-size }` is not a number.';
   }
+
   @if not unitless($min-size) {
     $min-size: strip-unit($min-size);
   }
@@ -44,6 +45,7 @@ $linear-scale-font-size-base: 16 !default;
   @if type-of($max-size) != 'number' {
     @error 'The argument $max-size: `#{ $max-size }` is not a number.';
   }
+
   @if not unitless($max-size) {
     $max-size: strip-unit($max-size);
   }
@@ -51,6 +53,7 @@ $linear-scale-font-size-base: 16 !default;
   @if type-of($min-window) != 'number' {
     @error 'The argument $min-window: `#{ $min-window }` is not a number.';
   }
+
   @if not unitless($min-window) {
     $min-window: strip-unit($min-window);
   }
@@ -58,6 +61,7 @@ $linear-scale-font-size-base: 16 !default;
   @if type-of($max-window) != 'number' {
     @error 'The argument $max-window: `#{ $max-window }` is not a number.';
   }
+
   @if not unitless($max-window) {
     $max-window: strip-unit($max-window);
   }
