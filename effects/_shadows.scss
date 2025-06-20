@@ -9,6 +9,8 @@
 /// @author Brian Milea
 /// @author Steven Keiser
 ///
+/// @access private
+///
 /// @param {number} $level
 ///   How intense the shadow should be.
 /// @param {color} $color
@@ -16,8 +18,6 @@
 ///
 /// @return {list}
 ///   The shadow definition for the chosen $level.
-///
-/// @access private
 
 @function _shadow($level, $color) {
   $shadow-levels: (
@@ -44,14 +44,14 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {number} $level [1]
 ///   How intense the shadow should be.
 /// @param {color} $color [#000000]
 ///   The color of the shadow.
 ///
 /// @require {function} _shadow
-///
-/// @access public
 
 @mixin box-shadow(
   $level: 1,
@@ -64,14 +64,14 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {number} $level [1]
 ///   How intense the shadow should be.
 /// @param {color} $color [#000000]
 ///   The color of the shadow.
 ///
 /// @require {function} _shadow
-///
-/// @access public
 
 @function drop-shadow(
   $level: 1,

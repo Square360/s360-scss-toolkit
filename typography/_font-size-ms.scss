@@ -8,6 +8,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @group typography
 ///
 /// @param {number} $scale
@@ -22,8 +24,6 @@
 ///
 /// @return {string}
 ///   A css3 variable with a default font-size.
-///
-/// @access public
 
 @function font-size-ms($scale, $namespace: '') {
   @if meta.type-of($scale) != 'number' {

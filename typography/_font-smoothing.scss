@@ -2,12 +2,12 @@
 ///
 /// @author Brian Milea
 ///
+/// @access public
+///
 /// @group typography
 ///
 /// @param {string} $aliasing ['antialiased']
 ///   The type of font smoothing to use.
-///
-/// @access public
 
 @mixin font-smoothing($aliasing: antialiased) {
   @if $aliasing == antialiased {

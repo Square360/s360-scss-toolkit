@@ -9,6 +9,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {number} $number
 ///   The number to apply the unit to.
 /// @param {string} $unit
@@ -16,8 +18,6 @@
 ///
 /// @return {number}
 ///   The $number displayed with the $unit.
-///
-/// @access public
 
 @function to-unit($number, $unit) {
   $units: (

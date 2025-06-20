@@ -6,6 +6,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {string} $string
 ///   The input string.
 /// @param {string} $separator
@@ -16,8 +18,6 @@
 ///
 /// @return {list}
 ///  A list of strings created by splitting the $string by the $separator.
-///
-/// @access public
 
 @function str-split($string, $separator) {
   @if meta.type-of($string) != 'string' {

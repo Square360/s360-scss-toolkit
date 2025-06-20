@@ -5,6 +5,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {number} $number
 ///   The number to remove the unit from.
 ///
@@ -13,8 +15,6 @@
 ///
 /// @return {number}
 ///   The given $number with it's unit removed.
-///
-/// @access public
 
 @function strip-unit($number) {
   @if meta.type-of($number) != 'number' {

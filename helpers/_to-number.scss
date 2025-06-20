@@ -10,6 +10,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {string|number} $value
 ///   The value to be converted.
 ///
@@ -17,8 +19,6 @@
 ///
 /// @return {number}
 ///   The $value as a number.
-///
-/// @access public
 
 @function to-number($value) {
   @if meta.type-of($value) == 'number' {

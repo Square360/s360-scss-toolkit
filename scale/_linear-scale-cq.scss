@@ -55,13 +55,12 @@
     $min-container: #{ strip-unit($min-container) };
   }
 
-  @if type-of($max-container) != 'number' {
+  @if meta.type-of($max-container) != 'number' {
     @error 'The argument $max-container: `#{ $max-container }` is not a number.';
   }
   @if not math.is-unitless($max-container) {
     $max-container: #{ strip-unit($max-container)};
   }
-
 
   $slope: math.div(($max-size - $min-size), ($max-container - $min-container));
   $y-axis-intersection: (-$min-container) * $slope + $min-size;

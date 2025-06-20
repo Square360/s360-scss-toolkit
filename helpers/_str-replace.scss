@@ -5,6 +5,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {string} $subject
 ///   The string being searched and replaced on.
 /// @param {string} $search
@@ -14,8 +16,6 @@
 ///
 /// @return {string}
 ///   A string with the replaced values.
-///
-/// @access public
 
 @function str-replace($subject, $search, $replace) {
   @if meta.type-of($subject) != 'string' {

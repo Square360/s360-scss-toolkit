@@ -8,10 +8,10 @@ $linear-scale-font-size-base: 16 !default;
 
 /// Returns responsive font sizing using clamp() and linear scaling based on viewport min and max.
 ///
-/// @see https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-///
 /// @author George Heimel
 /// @author Steven Keiser
+///
+/// @access public
 ///
 /// @param {number} $min-size
 ///   Minimum size.
@@ -30,9 +30,10 @@ $linear-scale-font-size-base: 16 !default;
 ///   .selector {
 ///     font-size: linear-scale(3.5rem, 7.75rem);
 ///   }
+//
+/// @link https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
 ///
 /// @return {string}
-///
 
 @function linear-scale($min-size, $max-size, $min-window: 360, $max-window: 1440, $unit: 'rem') {
   @if meta.type-of($min-size) != 'number' {

@@ -6,6 +6,8 @@
 /// @author George Heimel
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @group typography
 ///
 /// @param {string} $unicode
@@ -19,8 +21,6 @@
 ///
 /// @example
 ///   @include fontawesome-icon(\f164, 'regular');
-///
-/// @access public
 
 @mixin font-awesome-icon(
   $unicode,
