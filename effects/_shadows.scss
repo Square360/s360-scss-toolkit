@@ -85,3 +85,23 @@
 
   @return $shadows;
 }
+
+/// Applies a text-shadow with the given parameters.
+///
+/// @access public
+///
+/// @author Steven Keiser
+///
+/// @param {number} $level [1]
+///   How intense the shadow should be.
+/// @param {color} $color [#000000]
+///   The color of the shadow.
+///
+/// @require {function} _shadow
+
+@mixin text-shadow(
+  $level: 1,
+  $color: #000000
+) {
+  text-shadow: list.join(_shadow($level, $color), (), 'comma')
+}
