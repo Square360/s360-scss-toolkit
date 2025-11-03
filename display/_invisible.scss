@@ -1,6 +1,14 @@
 /// Hide visually and from screen readers, but maintain layout.
 ///
-/// @group visibility
+/// @access public
+
+@mixin invisible {
+  visibility: hidden;
+}
+
+/// Uses the invisible mixin.
+///
+/// @require {mixin} invisible
 ///
 /// @access public
 

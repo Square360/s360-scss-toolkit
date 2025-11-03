@@ -3,15 +3,23 @@
 /// Extends the %remove-visually-hidden to allow the element to be focusable
 /// when navigated to via the keyboard.
 ///
-/// @group visibility
-///
 /// @require {placeholder} %remove-visually-hidden
 ///
 /// @access public
 
-%focusable {
+@mixin focusable {
   &:active,
   &:focus {
     @extend %remove-visually-hidden;
   }
+}
+
+/// Uses the focusable mixin.
+///
+/// @require {mixin} focusable
+///
+/// @access public
+
+%focusable {
+  @include focusable;
 }

@@ -4,6 +4,7 @@
 ///   The amount of padding needed at the bottom to keep the aspect-ratio.
 ///
 /// @access public
+
 @mixin responsive-video($padding-bottom: 56.25%) {
   position: relative;
   padding-bottom: $padding-bottom;
@@ -17,4 +18,14 @@
     width: 100%;
     height: 100%;
   }
+}
+
+/// Uses the responsive-video mixin.
+///
+/// @require {mixin} responsive-video
+///
+/// @access public
+
+%responsive-video {
+  @include responsive-video;
 }
