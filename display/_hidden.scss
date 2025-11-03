@@ -1,9 +1,17 @@
 /// Hide visually and from screen readers.
 ///
-/// @group visibility
+/// @access public
+
+@mixin hidden {
+  display: none !important;
+}
+
+/// Uses the hidden mixin.
+///
+/// @require {mixin} hidden
 ///
 /// @access public
 
 %hidden {
-  display: none !important;
+  @include hidden;
 }
