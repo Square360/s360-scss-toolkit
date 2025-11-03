@@ -9,6 +9,8 @@
 ///
 /// @author Steven Keiser
 ///
+/// @access public
+///
 /// @param {number} $number
 ///   The number to apply the unit to.
 /// @param {string} $unit
@@ -34,7 +36,9 @@
     'vh': 1vh,
     'vmin': 1vmin,
     'vmax': 1vmax,
-    'fr': 1fr
+    'fr': 1fr,
+    'cqw': 1cqw,
+    'cqh': 1cqh,
   );
 
   @if meta.type-of($number) != 'number' {

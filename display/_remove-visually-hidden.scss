@@ -3,8 +3,13 @@
 /// Makes an element visible again.
 ///
 /// @group visibility
+///
+/// @param {string} $position [relative]
+///   How the element should be positioned when visible.
+///
+/// @access public
 
-@mixin remove-visually-hidden($position: static) {
+@mixin remove-visually-hidden($position: relative) {
   $positions: static, absolute, fixed, relative, sticky, initial, inherit;
 
   @if list.index($positions, $position) == null {
@@ -25,6 +30,8 @@
 /// @require {mixin} remove-visually-hidden
 ///
 /// @group visibility
+///
+/// @access public
 
 %remove-visually-hidden {
   @include remove-visually-hidden;

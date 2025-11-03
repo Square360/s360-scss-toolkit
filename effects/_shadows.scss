@@ -6,10 +6,10 @@
 /// Helper function which defines a map of shadow styles that create the
 /// illusion of depth at each level.
 ///
-/// @access private
-///
 /// @author Brian Milea
 /// @author Steven Keiser
+///
+/// @access private
 ///
 /// @param {number} $level
 ///   How intense the shadow should be.
@@ -42,9 +42,9 @@
 
 /// Applies a box-shadow with the given parameters.
 ///
-/// @access public
-///
 /// @author Steven Keiser
+///
+/// @access public
 ///
 /// @param {number} $level [1]
 ///   How intense the shadow should be.
@@ -62,9 +62,9 @@
 
 /// Adds drop-shadow filter(s) with the given parameters.
 ///
-/// @access public
-///
 /// @author Steven Keiser
+///
+/// @access public
 ///
 /// @param {number} $level [1]
 ///   How intense the shadow should be.
